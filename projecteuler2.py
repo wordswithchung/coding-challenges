@@ -9,17 +9,9 @@ four million, find the sum of the even-valued terms.
 https://projecteuler.net/problem=2
 """
 
-for i in range(4000000):
-    f = []
-    while len(f) <= 2:
-        if i % 2 == 0:
-            f.append(i)
-        return sum(f)
+f = [1, 2]
 
-nums = [i for i in range(4000000) if i % 2 == 0]
-fibs = []
-for num in nums:
-    if sum(fibs) < 4000000:
-        fibs.append(num)
-        a = num + nums[-1]
-        fibs.append(a)
+while max(f) < 4000000:
+    f.append(f[-2] + f[-1])
+
+print sum(i for i in f if i % 2 == 0)
