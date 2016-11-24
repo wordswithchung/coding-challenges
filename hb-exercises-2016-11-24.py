@@ -1,13 +1,13 @@
-def concat_lists(list1, list2):
+def concat_lists1(list1, list2):
     """Combine lists.
 
-        >>> concat_lists([1, 2], [3, 4])
+        >>> concat_lists1([1, 2], [3, 4])
         [1, 2, 3, 4]
-        >>> concat_lists([], [1, 2])
+        >>> concat_lists1([], [1, 2])
         [1, 2]
-        >>> concat_lists([1, 2], [])
+        >>> concat_lists1([1, 2], [])
         [1, 2]
-        >>> concat_lists([], [])
+        >>> concat_lists1([], [])
         []
     """
 
@@ -18,6 +18,24 @@ def concat_lists(list1, list2):
             concat.append(i)
 
     return concat
+
+
+def concat_lists2(list1, list2):
+    """Combine lists.
+
+        >>> concat_lists2([1, 2], [3, 4])
+        [1, 2, 3, 4]
+        >>> concat_lists2([], [1, 2])
+        [1, 2]
+        >>> concat_lists2([1, 2], [])
+        [1, 2]
+        >>> concat_lists2([], [])
+        []
+    """
+
+    # same function via list comprehension
+
+    return [i for i in (list1 + list2) if i]
 
 
 
