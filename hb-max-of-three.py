@@ -9,6 +9,8 @@ returns the largest of them.
 11
 """
 
+# another potential solution is to .sort() a list and return the [-1] item
+
 def max_of_three(num1, num2, num3):
     if num1 > num2 and num1 > num3:
         return num1
