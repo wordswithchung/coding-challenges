@@ -38,7 +38,6 @@ def concat_lists2(list1, list2):
     return [i for i in (list1 + list2) if i]
 
 
-
 def recursive_index(needle, haystack):
     """Given list (haystack), return index (0-based) of needle in the list.
 
@@ -57,7 +56,6 @@ def recursive_index(needle, haystack):
     """
 
     pass
-
 
 
 
@@ -81,7 +79,6 @@ def rev_list_in_place(lst):
     lst.pop
 
     pass
-
 
 
 #####################################################################
