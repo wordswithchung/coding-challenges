@@ -1,24 +1,51 @@
-def concat_lists1(list1, list2):
-    """Combine lists.
+def pig_latin(phrase):
+    """Turn a phrase into pig latin.
 
-        >>> concat_lists1([1, 2], [3, 4])
-        [1, 2, 3, 4]
-        >>> concat_lists1([], [1, 2])
-        [1, 2]
-        >>> concat_lists1([1, 2], [])
-        [1, 2]
-        >>> concat_lists1([], [])
-        []
+    There will be no uppercase letters or punctuation in the phrase.
+
+        >>> pig_latin('hello awesome programmer')
+        'ellohay awesomeyay rogrammerpay'
     """
 
-    concat = []
+    vowels = {'a', 'e', 'i', 'o', 'u'}
 
-    for i in (list1 + list2):
-        if i:
-            concat.append(i)
+    pig_latin_phrase = []
 
-    return concat
+    phrase = phrase.split(' ')
 
+    for word in phrase:
+        if word[0] in vowels:
+            pig_latin_phrase.append(word + 'yay')
+        else:
+            pig_latin_phrase.append(word[1:] + word[0] + 'ay')
+
+    return ' '.join(pig_latin_phrase)
+
+def binary_search(val):
+    """Using binary search, find val in range 1-100. Return # of guesses.
+
+        >>> binary_search(50)
+        1
+
+        >>> binary_search(25)
+        2
+
+        >>> binary_search(75)
+        2
+
+        >>> binary_search(31) <= 7
+        True
+
+        >>> max([binary_search(i) for i in range(1, 101)])
+        7
+    """
+
+    # assert 0 < val < 101, "Val must be between 1-100"
+
+    # num_guesses = 0
+
+    # return num_guesses
+    pass
 
 def concat_lists2(list1, list2):
     """Combine lists.
@@ -33,9 +60,7 @@ def concat_lists2(list1, list2):
         []
     """
 
-    # same function via list comprehension
-
-    return [i for i in (list1 + list2) if i]
+    return list1 + list2
 
 
 def recursive_index(needle, haystack):
@@ -80,35 +105,6 @@ def rev_list_in_place(lst):
 
     pass
 
-"""
-Write a function the returns True or False, depending on whether the integer
-passed into it is a prime number.
-
-Only numbers >1 can be prime numbers:
-
->>> is_prime(0)
-False
-
->>> is_prime(1)
-False
-
-Any number >1 that has no divisors other than 1 and itself is a prime number:
-
->>> is_prime(2)
-True
-
->>> is_prime(3)
-True
-
->>> is_prime(4)
-False
-
->>> is_prime(11)
-True
-
->>> is_prime(999)
-False
-"""
 
 def primes_list_comprehension():
     """Return count number of prime numbers, starting at 2."""
