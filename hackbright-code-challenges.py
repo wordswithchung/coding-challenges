@@ -1,3 +1,18 @@
+def rev_list_in_place(lst):
+    """Reverse list in place.
+
+    You cannot do this with reversed(), .reverse(), or list slice
+    assignment!
+
+        >>> lst = [1, 2, 3]
+        >>> rev_list_in_place(lst)
+        >>> lst
+        [3, 2, 1]
+    """
+
+    for i in range((len(lst) / 2)):
+        lst[i], lst[-i - 1] = lst[-i - 1], lst[i]
+
 def coins(num_coins):
     """Find change from combinations of `num_coins` of dimes and pennies.
 
