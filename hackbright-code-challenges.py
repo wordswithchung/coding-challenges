@@ -1,29 +1,89 @@
-def has_unique_chars(word):
-    """Given a word, return True if that word contains a unique set of
-    characters. Return False otherwise.
+# def has_balanced_parens(mystr):
+#     """Given a string, returns True or False depending on whether that
+#        string has balanced parentheses.
 
-        >>> has_unique_chars("Monday")
-        True
+#         >>> has_balanced_parens("()")
+#         True
 
-        >>> has_unique_chars("Moonday")
-        False
+#         >>> has_balanced_parens("(Oh Noes!)(")
+#         False
 
-        >>> has_unique_chars("")
-        True
+#         >>> has_balanced_parens("((There's a bonus open paren here.)")
+#         False
+
+#         >>> has_balanced_parens(")")
+#         False
+
+#         >>> has_balanced_parens("(")
+#         False
+
+#         >>> has_balanced_parens("Hey...there are no parens here!")
+#         True
+#     """
+
+#     count = 0
+
+#     for i in mystr:
+#         if i == '(':
+#             count += 1
+#         elif i == ')':
+#             count -= 1
+
+#     if count == 0:
+#         return True
+#     elif count < 0 or count > 0:
+#         return False
+
+def find_largest_smaller_than(nums, xnumber):
+    """In a sorted list of nums, find largest number that is smaller than
+    xnumber, returns None if not found
+
+        >>> find_largest_smaller_than([-5, 8, 12, 32], 10)
+        1
+
+        >>> find_largest_smaller_than([-5, 8, 12, 32], 33)
+        3
+
+        >>> find_largest_smaller_than([-5, 8, 12, 32], -7)
+        None
+
+        >>> find_largest_smaller_than([-5, 8, 12, 32], 7)
+        0
     """
 
-    if not word:
-        return True
+    for num in nums[::-1]:
+        if num > xnumber:
+            return nums.index(num) - 1
 
-    s = set()
+    return -1
 
-    for i in word:
-        if i not in s:
-            s.add(i)
-        else:
-            return False
+# def has_unique_chars(word):
+#     """Given a word, return True if that word contains a unique set of
+#     characters. Return False otherwise.
 
-    return True
+#         >>> has_unique_chars("Monday")
+#         True
+
+#         >>> has_unique_chars("Moonday")
+#         False
+
+#         >>> has_unique_chars("")
+#         True
+#     """
+
+#     if not word:
+#         return True
+
+#     s = set()
+
+#     for i in word:
+#         if i not in s:
+#             s.add(i)
+#         else:
+#             return False
+
+#     return True
+
 
 # def fizzbuzz():
 #     """Count from 1 to 20 in fizzbuzz fashion. To do so, loop from 1 to 20
@@ -117,6 +177,30 @@ def has_unique_chars(word):
 
 #     return results
 
+def is_palindrome(word):
+    """Return True/False if this word is a palindrome.
+
+        >>> is_palindrome("a")
+        True
+
+        >>> is_palindrome("noon")
+        True
+
+        >>> is_palindrome("racecar")
+        True
+
+        >>> is_palindrome("porcupine")
+        False
+
+        >>> is_palindrome("Racecar")
+        False
+    """
+
+    for i in range(len(word) / 2):
+        if word[i] != word[-i - 1]:
+            return False
+
+    return True
 
 # def is_anagram_of_palindrome(word):
 #     """Is the word an anagram of a palindrome?
