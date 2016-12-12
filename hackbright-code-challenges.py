@@ -1,3 +1,18 @@
+def max_num(num_list):
+    """Returns largest integer from given list
+
+        >>> max_num([5, 3, 6, 2, 1])
+        6
+    """
+
+    i = num_list[0]
+
+    for num in num_list[1:]:
+        if num > i:
+            i = num
+
+    return i
+
 # def has_balanced_parens(mystr):
 #     """Given a string, returns True or False depending on whether that
 #        string has balanced parentheses.
@@ -34,28 +49,28 @@
 #     elif count < 0 or count > 0:
 #         return False
 
-def find_largest_smaller_than(nums, xnumber):
-    """In a sorted list of nums, find largest number that is smaller than
-    xnumber, returns None if not found
+# def find_largest_smaller_than(nums, xnumber):
+#     """In a sorted list of nums, find largest number that is smaller than
+#     xnumber, returns None if not found
 
-        >>> find_largest_smaller_than([-5, 8, 12, 32], 10)
-        1
+#         >>> find_largest_smaller_than([-5, 8, 12, 32], 10)
+#         1
 
-        >>> find_largest_smaller_than([-5, 8, 12, 32], 33)
-        3
+#         >>> find_largest_smaller_than([-5, 8, 12, 32], 33)
+#         3
 
-        >>> find_largest_smaller_than([-5, 8, 12, 32], -7)
-        None
+#         >>> find_largest_smaller_than([-5, 8, 12, 32], -7)
+#         None
 
-        >>> find_largest_smaller_than([-5, 8, 12, 32], 7)
-        0
-    """
+#         >>> find_largest_smaller_than([-5, 8, 12, 32], 7)
+#         0
+#     """
 
-    for num in nums[::-1]:
-        if num > xnumber:
-            return nums.index(num) - 1
+#     for num in nums[::-1]:
+#         if num > xnumber:
+#             return nums.index(num) - 1
 
-    return -1
+#     return -1
 
 # def has_unique_chars(word):
 #     """Given a word, return True if that word contains a unique set of
@@ -177,30 +192,30 @@ def find_largest_smaller_than(nums, xnumber):
 
 #     return results
 
-def is_palindrome(word):
-    """Return True/False if this word is a palindrome.
+# def is_palindrome(word):
+#     """Return True/False if this word is a palindrome.
 
-        >>> is_palindrome("a")
-        True
+#         >>> is_palindrome("a")
+#         True
 
-        >>> is_palindrome("noon")
-        True
+#         >>> is_palindrome("noon")
+#         True
 
-        >>> is_palindrome("racecar")
-        True
+#         >>> is_palindrome("racecar")
+#         True
 
-        >>> is_palindrome("porcupine")
-        False
+#         >>> is_palindrome("porcupine")
+#         False
 
-        >>> is_palindrome("Racecar")
-        False
-    """
+#         >>> is_palindrome("Racecar")
+#         False
+#     """
 
-    for i in range(len(word) / 2):
-        if word[i] != word[-i - 1]:
-            return False
+#     for i in range(len(word) / 2):
+#         if word[i] != word[-i - 1]:
+#             return False
 
-    return True
+#     return True
 
 # def is_anagram_of_palindrome(word):
 #     """Is the word an anagram of a palindrome?
