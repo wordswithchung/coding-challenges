@@ -1,3 +1,18 @@
+def lucky_numbers(n):
+    """Return n unique random numbers from 1-10 (inclusive).
+
+        >>> sorted(lucky_numbers(10))
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        >>> lucky_numbers(2)
+        [3, 7]
+
+        >>> lucky_numbers()
+        []
+    """
+
+    a =
+
 def max_num(num_list):
     """Returns largest integer from given list
 
