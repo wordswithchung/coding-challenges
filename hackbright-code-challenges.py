@@ -1,32 +1,39 @@
-def lucky_numbers(n):
-    """Return n unique random numbers from 1-10 (inclusive).
+def print_digits(num):
+    """Given int, print digits in reverse order, starting with the ones place.
 
-        >>> sorted(lucky_numbers(10))
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-        >>> lucky_numbers(2)
-        [3, 7]
-
-        >>> lucky_numbers()
-        []
+        >>> print_digits(1)
+        1
+        >>> print_digits(314)
+        4
+        1
+        3
+        >>> print_digits(12)
+        2
+        1
     """
 
-    a =
+    while num % 10 != num:
+        m = num % 10
+        print m
+        num = (num - m) / 10
 
-def max_num(num_list):
-    """Returns largest integer from given list
+    print num
 
-        >>> max_num([5, 3, 6, 2, 1])
-        6
-    """
 
-    i = num_list[0]
+# def max_num(num_list):
+#     """Returns largest integer from given list
 
-    for num in num_list[1:]:
-        if num > i:
-            i = num
+#         >>> max_num([5, 3, 6, 2, 1])
+#         6
+#     """
 
-    return i
+#     i = num_list[0]
+
+#     for num in num_list[1:]:
+#         if num > i:
+#             i = num
+
+#     return i
 
 # def has_balanced_parens(mystr):
 #     """Given a string, returns True or False depending on whether that
