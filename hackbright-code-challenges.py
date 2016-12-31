@@ -1,23 +1,99 @@
-def print_digits(num):
-    """Given int, print digits in reverse order, starting with the ones place.
+def hex_convert(hex):
+    """Convert a hexadecimal string, like '1A', into its decimal equivalent.
 
-        >>> print_digits(1)
-        1
-        >>> print_digits(314)
-        4
-        1
-        3
-        >>> print_digits(12)
-        2
-        1
+        >>> hex_convert('6')
+        6
+
+        >>> hex_convert('1A')
+        26
+
+        >>> hex_convert('FFFF')
+        65535
     """
 
-    while num % 10 != num:
-        m = num % 10
-        print m
-        num = (num - m) / 10
+    values = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8,
+              '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
 
-    print num
+    total = 0
+    power = len(hex) - 1
+
+    for char in hex:
+        total = total + (values[char] * (16 ** power))
+        power -= 1
+
+    return total
+
+def find_range(list_of_ints):
+    """Given a list of numbers, return the biggest and smallest number in a
+    tuple.
+
+        >>> list_of_ints([39, 2, 10, 939])
+        (2, 939)
+
+        >>> list_of_ints([7])
+        (7, 7)
+
+        >>> list_of_ints([])
+        (None, None)
+    """
+
+    if not list_of_ints:
+        return (None, None)
+
+    smallest = list_of_ints[0]
+    biggest = list_of_ints[0]
+
+    for num in list_of_ints:
+        if num < smallest:
+            smallest = num
+        elif num > biggest:
+            biggest = num
+
+    return (smallest, biggest)
+
+
+def has_more_vowels(word):
+    """Given a word (no space, no punctionation), return True if the word has
+    more vowels than non-vowels.
+
+        >>> has_more_vowels("sequoia")
+        True
+
+        >>> has_more_vowels("banana")
+        False
+    """
+
+    vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
+
+    vowel_count = 0
+
+    for letter in word:
+        if letter in vowels:
+            vowel_count += 1
+
+    return vowel_count > (len(word) / 2)
+
+
+# def print_digits(num):
+#     """Given int, print digits in reverse order, starting with the ones place.
+#
+#         >>> print_digits(1)
+#         1
+#         >>> print_digits(314)
+#         4
+#         1
+#         3
+#         >>> print_digits(12)
+#         2
+#         1
+#     """
+#
+#     while num % 10 != num:
+#         m = num % 10
+#         print m
+#         num = (num - m) / 10
+#
+#     print num
 
 
 # def max_num(num_list):
